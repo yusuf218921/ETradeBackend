@@ -1,5 +1,4 @@
-﻿using Core.Entities.Abstract;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entities.DTOs
 {
-    public class UserForRegister : IDto
+    public class OrderDetailDto
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
+        public int OrderID { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
+        public decimal TolalPrice { get; set; }
+        public string AdressText { get; set; }
+        public DateTime Date { get; set; }
     }
 }
