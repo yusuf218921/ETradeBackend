@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Abstract
+namespace Business.ValidationRules.FluentValidation
 {
-    public interface IAdressService
+    internal class UserValidator
     {
-
     }
 }
