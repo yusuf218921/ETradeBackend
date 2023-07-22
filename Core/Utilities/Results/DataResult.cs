@@ -19,5 +19,6 @@ namespace Core.Utilities.Result
         {
             Data = data;
         }
+        
     }
 }

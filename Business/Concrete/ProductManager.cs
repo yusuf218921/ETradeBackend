@@ -84,6 +84,20 @@ namespace Business.Concrete
             _productDal.Update(product);
             return new SuccessResult(Messages.ProductUpdated);
         }
+        [SecuredOperation("admin,moderator,user")]
+        [ValidationAspect(typeof(ProductValidator))]
+        public IResult UpdateStockAmount(Product product)
+        {
+            IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName));
+
+            if (result != null)
+            {
+                return result;
+            }
+            _productDal.Update(product);
+            return new SuccessResult(Messages.ProductUpdated);
+        }
+
         private IResult CheckIfProductNameExists(string productName)
         {
             var result = _productDal.GetAll(p => p.ProductName == productName).Any();

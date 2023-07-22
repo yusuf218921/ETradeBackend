@@ -34,7 +34,7 @@ namespace Business.Concrete
                 Status = true
             };
             _userService.Add(user);
-            return new SuccessDataResult<User>(user, Messages.UserRegistered);
+            return new Core.Utilities.Results.SuccessDataResult<User>(user, Messages.UserRegistered);
         }
 
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
@@ -50,7 +50,7 @@ namespace Business.Concrete
                 return new ErrorDataResult<User>(Messages.PasswordError);
             }
 
-            return new SuccessDataResult<User>(userToCheck.Data, Messages.SuccessfulLogin);
+            return new Core.Utilities.Results.SuccessDataResult<User>(userToCheck.Data, Messages.SuccessfulLogin);
         }
 
         public IResult UserExists(string email)
@@ -66,7 +66,7 @@ namespace Business.Concrete
         {
             var claims = _userService.GetClaims(user);
             var accessToken = _tokenHelper.CreateToken(user, claims.Data);
-            return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
+            return new Core.Utilities.Results.SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Core.DataAccess;
 using Core.Entities.Concrate;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace DataAccess.Abstract
 {
     public interface IAdressDal : IEntityRepository<Adress>
     {
+        List<AdressDetailDto> GetAllAdressDetail();
+        AdressDetailDto GetAdressDetail(int id);
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    internal class UserValidator
+    public class UserValidator
     {
+
     }
 }

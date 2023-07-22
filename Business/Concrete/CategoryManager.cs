@@ -42,12 +42,12 @@ namespace Business.Concrete
 
         public IDataResult<List<Category>> GetAll()
         {
-            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll().ToList());
+            return new Core.Utilities.Results.SuccessDataResult<List<Category>>(_categoryDal.GetAll().ToList());
         }
 
         public IDataResult<Category> GetById(int categoryId)
         {
-            return new SuccessDataResult<Category>(_categoryDal.Get(c => c.CategoryID == categoryId));
+            return new Core.Utilities.Results.SuccessDataResult<Category>(_categoryDal.Get(c => c.CategoryID == categoryId));
         }
         [SecuredOperation("admin,moderator")]
         public IResult Update(Category category)

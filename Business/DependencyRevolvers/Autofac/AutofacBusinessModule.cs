@@ -23,6 +23,24 @@ namespace Business.DependencyRevolvers.Autofac
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EfUserDal>().As<IUserDal>();
 
+            builder.RegisterType<AdressManager>().As<IAdressService>();
+            builder.RegisterType<EfAdressDal>().As<IAdressDal>();
+
+            builder.RegisterType<CityManager>().As<ICityService>();
+            builder.RegisterType<EfCityDal>().As<ICityDal>();
+
+            builder.RegisterType<TownManager>().As<ITownService>();
+            builder.RegisterType<EfTownDal>().As<ITownDal>();
+
+            builder.RegisterType<TelNumberManager>().As<ITelNumberService>();
+            builder.RegisterType<EfTelNumberDal>().As<ITelNumberDal>();
+
+            builder.RegisterType<OrderManager>().As<IOrderService>();
+            builder.RegisterType<EfOrderDal>().As<IOrderDal>();
+
+            builder.RegisterType<OrderLineManager>().As<IOrderLineService>();
+            builder.RegisterType<EfOrderLineDal>().As<IOrderLineDal>();
+
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
 
