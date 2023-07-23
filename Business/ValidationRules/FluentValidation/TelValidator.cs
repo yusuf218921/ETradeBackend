@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    public class TelValidation : AbstractValidator<TelNumber>
+    public class TelValidator : AbstractValidator<TelNumber>
     {
-        public TelValidation()
+        public TelValidator()
         {
             RuleFor(t=> t.PhoneNumber).Length(11);
             RuleFor(t => t.PhoneNumber).Must(StartWithZero);
@@ -18,7 +18,7 @@ namespace Business.ValidationRules.FluentValidation
 
         private bool StartWithZero(string arg)
         {
-            return arg[0] == '0' ? true:false;*0
+            return arg[0] == '0' ? true:false;
         }
     }
 }

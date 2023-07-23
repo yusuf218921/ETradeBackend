@@ -5,11 +5,6 @@ using Core.Utilities.Result;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
@@ -39,17 +34,17 @@ namespace Business.Concrete
 
         public IDataResult<List<City>> GetAll()
         {
-            return new Core.Utilities.Results.SuccessDataResult<List<City>>(_cityDal.GetAll().ToList());
+            return new SuccessDataResult<List<City>>(_cityDal.GetAll().ToList());
         }
 
         public IDataResult<City> GetById(int id)
         {
-            return new Core.Utilities.Results.SuccessDataResult<City>(_cityDal.Get(c=> c.CityID == id));
+            return new SuccessDataResult<City>(_cityDal.Get(c=> c.CityID == id));
         }
 
         public IDataResult<City> GetByName(string name)
         {
-            return new Core.Utilities.Results.SuccessDataResult<City>(_cityDal.Get(c => c.CityName == name));
+            return new SuccessDataResult<City>(_cityDal.Get(c => c.CityName == name));
         }
         [SecuredOperation("admin,moderator")]
         public IResult Update(City city)

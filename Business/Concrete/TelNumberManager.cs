@@ -19,7 +19,7 @@ namespace Business.Concrete
         {
             _TelNumberDal = telNumberDal;
         }
-        [ValidationAspect(typeof(TelValidation))]
+        [ValidationAspect(typeof(TelValidator))]
         public IResult Add(TelNumber telNumber)
         {
             var result = BusinessRules.Run(CheckIfTelNumberExists(telNumber));
@@ -39,7 +39,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<TelNumber>>(_TelNumberDal.GetAll(t=> t.UserID == userId).ToList());
         }
-        [ValidationAspect(typeof(TelValidation))]
+        [ValidationAspect(typeof(TelValidator))]
         public IResult Update(TelNumber telNumber)
         {
             var result = BusinessRules.Run(CheckIfTelNumberExists(telNumber));

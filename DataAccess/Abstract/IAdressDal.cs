@@ -12,7 +12,6 @@ namespace DataAccess.Abstract
 {
     public interface IAdressDal : IEntityRepository<Adress>
     {
-        List<AdressDetailDto> GetAllAdressDetail();
-        AdressDetailDto GetAdressDetail(int id);
+        List<AdressDetailDto> GetAdressDetail(int id);
     }
 }

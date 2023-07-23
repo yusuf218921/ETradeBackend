@@ -19,5 +19,6 @@ namespace Business.Abstract
         IResult Update(Product product);
         IDataResult<List<Product>> GetByName(string name);
         IDataResult<List<ProductDetailDto>> GetDetail();
+        IResult UpdateStockAmount(Product product);
     }
 }

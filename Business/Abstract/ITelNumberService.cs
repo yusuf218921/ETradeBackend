@@ -10,9 +10,9 @@ namespace Business.Abstract
 {
     public interface ITelNumberService
     {
-        IResult Add();
-        IResult Update();
-        IResult Delete();
+        IResult Add(TelNumber telNumber);
+        IResult Update(TelNumber telNumber);
+        IResult Delete(TelNumber telNumber);
         IDataResult<List<TelNumber>> GetByUserId(int userId);
     }
 }

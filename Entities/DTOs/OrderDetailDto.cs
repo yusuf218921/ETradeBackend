@@ -12,7 +12,7 @@ namespace Entities.DTOs
         public int OrderID { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        public decimal TolalPrice { get; set; }
+        public decimal TotalPrice { get; set; }
         public string AdressText { get; set; }
         public DateTime Date { get; set; }
     }
