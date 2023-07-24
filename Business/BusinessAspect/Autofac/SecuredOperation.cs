@@ -29,7 +29,7 @@ namespace Business.BusinessAspects.Autofac
                     return;
                 }
             }
-            throw new Exception();
+            throw new Exception("yetkiniz yok");
         }
     }
 }
