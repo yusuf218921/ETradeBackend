@@ -14,6 +14,7 @@ namespace Business.DependencyRevolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
+            
             builder.RegisterType<ProductManager>().As<IProductService>();
             builder.RegisterType<EfProductDal>().As<IProductDal>();
 
