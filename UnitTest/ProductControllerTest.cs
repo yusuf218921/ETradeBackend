@@ -26,6 +26,7 @@ public class ProductsControllerTests
     [Test]
     public void GetProduct_ExistingId_ReturnsOkWithProduct()
     {
+        
         // Arrange
         int productId = 1;
         var mockProduct = new Product { ProductID = 1, CategoryID = 1, ProductName = "deneme", UnitPrice= 100, StockAmount = 100, Status = true };
